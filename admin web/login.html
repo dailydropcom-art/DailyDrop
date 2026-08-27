@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Login | DailyDrop</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<main>
+		<section class="login-section">
+			<div class="login-card">
+				<a class="logo" href="../Customer Web/index.html">Daily<span>Drop</span></a>
+				<p class="eyebrow">Administration</p>
+				<h1>Admin Login</h1>
+				<p class="login-intro">Sign in to manage the DailyDrop platform.</p>
+				<form class="login-form" data-login-target="dashboard.html">
+					<label for="admin-email">Email ID</label>
+					<input id="admin-email" name="email" type="email" autocomplete="email" placeholder="admin@dailydrop.com" required>
+					<label for="admin-password">Password</label>
+					<input id="admin-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="6">
+					<button class="button button-primary" type="submit">Log in to Admin <span aria-hidden="true">→</span></button>
+				</form>
+				<a class="login-back" href="../Customer Web/index.html">Return to shop</a>
+			</div>
+		</section>
+	</main>
+	<script src="../js/app.js"></script>
+</body>
+</html>
