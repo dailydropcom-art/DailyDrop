@@ -15,5 +15,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`DailyDrop Backend running on http://localhost:${PORT}`);
+    console.log(`DailyDrop Backend running on http://localhost:5000`);
 });

@@ -1,31 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Seller Login | DailyDrop</title>
-	<link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyDrop - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body>
-	<main>
-		<section class="login-section">
-			<div class="login-card">
-				<a class="logo" href="../Customer Web/index.html">Daily<span>Drop</span></a>
-				<p class="eyebrow">Seller Hub</p>
-				<h1>Seller Login</h1>
-				<p class="login-intro">Sign in to manage your DailyDrop store.</p>
-				<form class="login-form" data-role="seller" data-login-target="dashboard.html">
-					<label for="seller-email">Email ID</label>
-					<input id="seller-email" name="email" type="email" autocomplete="email" placeholder="you@business.com" required>
-					<label for="seller-password">Password</label>
-					<input id="seller-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="6">
-					<button class="button button-primary" type="submit">Log in to Seller Hub <span aria-hidden="true">→</span></button>
-				</form>
-				<p><a class="login-back" href="register.html">New seller? Register your store</a></p>
-				<a class="login-back" href="../Customer Web/index.html">Return to shop</a>
-			</div>
-		</section>
-	</main>
-	<script src="../js/app.js"></script>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-white rounded-3xl shadow-xl flex flex-col md:flex-row max-w-4xl w-full p-4 md:p-6 gap-6">
+    
+    <!-- Left Banner Section -->
+    <div class="bg-orange-500 text-white rounded-2xl p-8 md:p-12 flex flex-col justify-between w-full md:w-1/2 min-h-[450px]">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">
+          Simplify management with our dashboard.
+        </h1>
+        <p class="text-orange-100 text-sm leading-relaxed">
+          Simplify your e-commerce management with our user-friendly admin dashboard.
+        </p>
+      </div>
+      <!-- Illustration Placeholder -->
+      <div class="mt-8 flex justify-center">
+        <div class="w-48 h-48 bg-orange-400/50 rounded-full flex items-center justify-center text-4xl">
+          🛍️
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Login Form Section -->
+    <div class="w-full md:w-1/2 p-4 md:p-8 flex flex-col justify-center">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-2 mb-6">
+        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+          DD
+        </div>
+        <span class="font-bold text-xl text-gray-800">DailyDrop</span>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Welcome Back</h2>
+      <p class="text-gray-400 text-sm mb-6">Please login to your account.</p>
+
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        <div>
+          <input type="email" placeholder="Email address" 
+            class="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-gray-700">
+        </div>
+
+        <div>
+          <input type="password" placeholder="Password" 
+            class="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-gray-700">
+          <div class="text-right mt-2">
+            <a href="#" class="text-xs text-gray-400 hover:underline">Forgot password?</a>
+          </div>
+        </div>
+
+        <button type="submit" 
+          class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 rounded-xl transition duration-200 shadow-md shadow-orange-200">
+          Login
+        </button>
+      </form>
+
+      <!-- Social Login Divider -->
+      <div class="relative my-6 text-center">
+        <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-100"></div></div>
+        <span class="relative bg-white px-3 text-xs text-gray-400">Or Login with</span>
+      </div>
+
+      <!-- Social Buttons -->
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <button class="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2.5 text-xs font-medium text-gray-600 hover:bg-gray-50 transition">
+          <span class="text-base">🌐</span> Google
+        </button>
+        <button class="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-2.5 text-xs font-medium text-gray-600 hover:bg-gray-50 transition">
+          <span class="text-base">📘</span> Facebook
+        </button>
+      </div>
+
+      <p class="text-center text-xs text-gray-400">
+        Don't have an account? <a href="#" class="text-orange-500 font-medium hover:underline">Signup</a>
+      </p>
+
+    </div>
+  </div>
+
 </body>
 </html>
