@@ -5,8 +5,12 @@
       "destination": "/sellerhub/index.html"
     },
     {
+      "source": "/sellerhub/",
+      "destination": "/sellerhub/index.html"
+    },
+    {
       "source": "/admin",
-      "destination": "/admin%20web/index.html"
+      "destination": "/Customer%20Web/index.html"
     }
   ]
 }
