@@ -1,8 +1,21 @@
 (function () {
+    var path = location.pathname.toLowerCase();
+    var portalPage = (path.indexOf('/sellerhub/') >= 0 || path.indexOf('/admin web/') >= 0) && !/\/(index|login|register)\.html$/.test(path);
+    if (portalPage) {
+        var firebaseConfigScript = document.createElement('script');
+        firebaseConfigScript.src = '../js/firebase-config.js';
+        firebaseConfigScript.onload = function () {
+            var firebaseGuardScript = document.createElement('script');
+            firebaseGuardScript.type = 'module';
+            firebaseGuardScript.src = '../js/firebase-guard.js';
+            document.head.appendChild(firebaseGuardScript);
+        };
+        document.head.appendChild(firebaseConfigScript);
+    }
     var read = function (key, fallback) { try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch (error) { return fallback; } };
     var write = function (key, value) { localStorage.setItem(key, JSON.stringify(value)); };
     var money = function (value) { return '₹' + Number(value).toFixed(2); };
-    document.addEventListener('DOMContentLoaded', function () { var sellerPage = location.pathname.toLowerCase().indexOf('/sellerhub/') >= 0, publicSellerPage = /\/(index|login|register)\.html$/.test(location.pathname.toLowerCase()), adminPage = location.pathname.toLowerCase().indexOf('/admin web/') >= 0, adminLoginPage = /\/(index|login)\.html$/.test(location.pathname.toLowerCase()); if (sellerPage && !publicSellerPage && !read('activeSeller', '')) { location.href = 'index.html'; return; } if (adminPage && !adminLoginPage && !read('adminSession', false)) { location.href = 'index.html'; return; }
+    document.addEventListener('DOMContentLoaded', function () { var sellerPage = location.pathname.toLowerCase().indexOf('/sellerhub/') >= 0, publicSellerPage = /\/(index|login|register)\.html$/.test(location.pathname.toLowerCase()), adminPage = location.pathname.toLowerCase().indexOf('/admin web/') >= 0, adminLoginPage = /\/(index|login)\.html$/.test(location.pathname.toLowerCase());
         var replaceBrand = function (node) { if (node.nodeType === 3) { node.nodeValue = node.nodeValue.replace(/DayliDrope/g, 'DailyDrop'); return; } if (node.nodeName === 'SCRIPT' || node.nodeName === 'STYLE') return; Array.prototype.forEach.call(node.childNodes, replaceBrand); };
         replaceBrand(document.body);
         document.querySelectorAll('.logo').forEach(function (logo) { logo.innerHTML = 'Daily<span>Drop</span>'; });
