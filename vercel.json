@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/sellerhub",
+      "destination": "/sellerhub/index.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin%20web/index.html"
+    }
+  ]
+}
